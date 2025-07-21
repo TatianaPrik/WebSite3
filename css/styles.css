@@ -231,7 +231,7 @@ h3 {
 
 .view-toggle {
     background: var( --accent-turquoise); /*transparent;*/
-    /*border: 2px solid var(--primary-color);*/
+    border: 2px solid var(--primary-color);
     color: var(--accent-navy);
     padding: 6px 9px;
     border-radius: 15px;
@@ -245,7 +245,7 @@ h3 {
 .view-toggle:hover,
 .view-toggle.active {
     background: var(--accent-color);
-    /*border-color: var(--accent-color);*/
+    border-color: var(--accent-color);
     color: --accent-navy; /*white;*/
 }
 
