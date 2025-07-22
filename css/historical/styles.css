@@ -230,7 +230,7 @@ h3 {
 }
 
 .view-toggle {
-    background: transparent;
+    background: var( --accent-turquoise); /*transparent;*/
     border: 2px solid var(--primary-color);
     color: var(--accent-navy);
     padding: 6px 9px;
@@ -438,31 +438,6 @@ h3 {
 }
 
 /* Artwork Page Styles */
-/* Compact filter styles only for artwork page */
-.artwork-page .category-filters {
-    padding: 0.05rem 0.3rem;
-    border-radius: 7px;
-}
-.artwork-page .filter-group {
-    gap: 0.18rem;
-    margin-bottom: 0.02rem;
-    padding: 0.05rem 0;
-}
-.artwork-page .filter-group-title {
-    font-size: 0.48rem;
-    min-width: 40px;
-    margin-right: 0.2rem;
-}
-.artwork-page .filter-btn {
-    padding: 2px 6px;
-    font-size: 0.45rem;
-    border-radius: 7px;
-    margin-right: 0.08rem;
-    margin-bottom: 0.08rem;
-}
-.artwork-page .filter-buttons {
-    gap: 0.18rem;
-}
 
 .artwork-page {
     padding-top: 100px;
@@ -544,7 +519,7 @@ h3 {
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    /* user-drag: none; */
+    user-drag: none;
 }
 
 /* ZOOM/PAN: Enhanced zoom controls positioning and styling */
@@ -986,18 +961,6 @@ h3 {
 }
 
 @media screen and (max-width: 480px) {
-    .artwork-page .filter-buttons {
-        display: inline-flex;
-        flex-wrap: wrap;
-        gap: 0.12rem;
-        width: auto;
-    }
-    .artwork-page .filter-btn {
-        margin-right: 0.08rem;
-        margin-bottom: 0.08rem;
-        min-width: 0;
-        max-width: none;
-    }
     .container {
         padding: 0 10px;
         margin: 0 0;
@@ -1386,8 +1349,10 @@ html {
 
 /* High DPI displays optimization */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    /* You can specify a higher resolution image here if available */
-    /* background-image: url('hero-background-2x.jpg'); */
+    .hero {
+        /* You can specify a higher resolution image here if available */
+        /* background-image: url('hero-background-2x.jpg'); */
+    }
 }
 
 /* Compact Elegant Category Filter Styles */
@@ -1450,20 +1415,20 @@ html {
 }
 
 .filter-btn {
-    padding: 4px 8px;
-    font-size: 0.55rem;
+    padding: 6px 9px; /*0.5rem 1rem;*/
+    font-size: 0.5rem;
     font-weight: 500;
     border: 1px solid var(--accent-turquoise);
-    border-radius: 10px;
+    border-radius: 15px;
     background: var(--bg-greige);
-    color: var(--accent-navy);
+    color: var(--text-dark);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     letter-spacing: 0.3px;
     white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(191, 160, 102, 0.1);
+box-shadow: 0 4px 15px rgba(191, 160, 102, 0.1);
 }
 
 
@@ -1541,7 +1506,7 @@ html {
     color: var(--accent-navy);
     box-shadow: 0 8px 25px rgba(64, 192, 192, 0.25);
     transform: translateY(-2px) scale(1.05);
-
+}
 }
 
 .filter-reset-btn:before {
@@ -1578,7 +1543,22 @@ a {
     transition: all 0.3s ease;
 }
 
+a:hover {
+    color: var(--accent-gold);
+    text-decoration: underline;
+    text-decoration-color: var(--accent-gold);
+    text-underline-offset: 3px;
+}
 
+a:visited {
+    color: var(--accent-turquoise);
+}
+
+a:visited:hover {
+    color: var(--accent-gold);
+}
+
+/* Compact Elegant Category Tags for Artwork Pages */
 .artwork-categories {
     margin: 1.5rem 0;
     padding: 1rem;
@@ -1592,9 +1572,9 @@ a {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.3rem;
-    margin-bottom: 0.5rem;
-    padding: 0.2rem 0;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.4rem 0;
 }
 
 .category-group:not(:last-child) {
@@ -1618,21 +1598,21 @@ a {
 
 .category-tag {
     display: inline-block;
-    padding: 0.2rem 0.5rem;
+    padding: 0.4rem 0.8rem;
     font-family: var(--font-body);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 14px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     text-decoration: none;
     color: inherit;
     position: relative;
     overflow: hidden;
-    margin-right: 0.2rem;
-    margin-bottom: 0;
-    letter-spacing: 0.2px;
-    border: 1px solid transparent;
+    margin-right: 0.5rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.3px;
+    border: 2px solid transparent;
 }
 
 .category-tag::before {
@@ -1711,7 +1691,10 @@ a {
         gap: 0.4rem;
     }
     
-    /* .filter-btn media query removed for consistency. Main block now controls compact style. */
+    .filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.5rem;
+    }
     
     .reset-filters {
         margin: 0.5rem auto 0;
@@ -1747,16 +1730,14 @@ a {
     }
 
 @media screen and (max-width: 480px) {
-    /* .filter-btn media query removed for consistency. Main block now controls compact style. */
+    .filter-btn {
+        font-size: 0.5rem;
+        padding: 0.1rem 0.5rem;
+    }
     
-    .category-group {
-        flex-wrap: wrap;
-        flex-direction: row;
-        gap: 0.2rem;
-    }
     .category-tag {
-        font-size: 0.55rem;
-        padding: 0.15rem 0.35rem;
-        margin-right: 0.15rem;
+        font-size: 0.5rem;
+        padding: 0.1rem 0.3rem;
     }
+}
 
