@@ -246,7 +246,7 @@ h3 {
 .view-toggle.active {
     background: var(--accent-color);
     border-color: var(--accent-color);
-    color: --accent-navy; /*white;*/
+    color: white;
 }
 
 
